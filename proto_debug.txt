@@ -1,0 +1,94 @@
+profile: /Users/magnuspierre/Documents/config1.share
+tablepath: 
+profile_path: 
+List tables...
+response: {
+    "shareCredentialsVersion": 1,
+    "endpoint": "https://oregon.staging.cloud.databricks.com/api/2.0/delta-sharing/metastores/3f483dc5-1cbf-4faf-83db-c6d43345a406",
+    "bearerToken": "WpxLT5MBKoPCVgp4s3AaEADYJAsNeLat1kQvwQ-4kZLBGI1n2XCkeB8qYtYrIsTW",
+    "expirationTime": "2022-05-01T13:51:02.826Z"
+}
+
+#########################
+RESPONSE:
+HTTP/2.0 200 OK
+Content-Type: application/json;charset=utf-8
+Date: Fri, 1 Apr 2022 15:06:31 GMT
+Server: databricks
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+
+{"items":[{"name":"share_20220401_065100_10f7f384-95f1-4122-a6e7-32a3aac80cbe","id":"0ec83a15-0fd0-4d14-b032-fc4ce9610860"}]}#########################
+
+
+#########################
+RESPONSE:
+HTTP/2.0 200 OK
+Content-Type: application/json;charset=utf-8
+Date: Fri, 1 Apr 2022 15:06:31 GMT
+Server: databricks
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+
+{"items":[{"name":"data_sfgov_org","share":"share_20220401_065100_10f7f384-95f1-4122-a6e7-32a3aac80cbe"},{"name":"opendata_howardcountymd_gov","share":"share_20220401_065100_10f7f384-95f1-4122-a6e7-32a3aac80cbe"}]}#########################
+
+
+#########################
+RESPONSE:
+HTTP/2.0 200 OK
+Content-Type: application/json;charset=utf-8
+Date: Fri, 1 Apr 2022 15:06:32 GMT
+Server: databricks
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+
+{"items":[{"name":"g8m3_pdis_registeredbusinesslocations_sanfrancisco","schema":"data_sfgov_org","share":"share_20220401_065100_10f7f384-95f1-4122-a6e7-32a3aac80cbe","share_id":"0ec83a15-0fd0-4d14-b032-fc4ce9610860","id":"e2e7c45b-3a21-42c7-afee-3b2eae57f26e"}]}#########################
+
+
+#########################
+File Response:
+HTTP/2.0 200 OK
+Connection: close
+Content-Type: application/x-ndjson; charset=utf-8
+Date: Fri, 1 Apr 2022 15:06:32 GMT
+Delta-Table-Version: 0
+Server: databricks
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+
+{"protocol":{"minReaderVersion":1}}
+{"metaData":{"id":"e2e7c45b-3a21-42c7-afee-3b2eae57f26e","format":{"provider":"parquet"},"schemaString":"{\"type\":\"struct\",\"fields\":[{\"name\":\"ttxid\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"certificate_number\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"ownership_name\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"dba_name\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"full_business_address\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"city\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"state\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"business_zip\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"dba_start_date\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"dba_end_date\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"location_start_date\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"location_end_date\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"mailing_address_1\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"mail_city\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"mail_zipcode\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"mail_state\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"naic_code\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"naic_code_description\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"parking_tax\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"transient_occupancy_tax\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"lic\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"lic_code_description\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"supervisor_district\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"neighborhoods_analysis_boundaries\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"business_corridor\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"location\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"uniqueid\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\":@computed_region_6qbp_sg9q\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\":@computed_region_qgnn_b9vv\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\":@computed_region_26cr_cadq\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\":@computed_region_ajp5_b2md\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\":@computed_region_jwn9_ihcz\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}","partitionColumns":[]}}
+#########################
+
+
+#########################
+RESPONSE:
+HTTP/2.0 200 OK
+Content-Type: application/json;charset=utf-8
+Date: Fri, 1 Apr 2022 15:06:32 GMT
+Server: databricks
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+Vary: Accept-Encoding
+X-Content-Type-Options: nosniff
+
+{"items":[{"name":"xvpn_2pnt_fireandrescueapparatusresponses2012_2018","schema":"opendata_howardcountymd_gov","share":"share_20220401_065100_10f7f384-95f1-4122-a6e7-32a3aac80cbe","share_id":"0ec83a15-0fd0-4d14-b032-fc4ce9610860","id":"49d2e702-4126-4ed5-8db0-00d25cafe068"}]}#########################
+
+
+#########################
+File Response:
+HTTP/2.0 200 OK
+Connection: close
+Content-Type: application/x-ndjson; charset=utf-8
+Date: Fri, 1 Apr 2022 15:06:33 GMT
+Delta-Table-Version: 1
+Server: databricks
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+X-Content-Type-Options: nosniff
+
+{"protocol":{"minReaderVersion":1}}
+{"metaData":{"id":"49d2e702-4126-4ed5-8db0-00d25cafe068","format":{"provider":"parquet"},"schemaString":"{\"type\":\"struct\",\"fields\":[{\"name\":\"incident_id\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"apparatus_id\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"apparatus_type_code\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"apparartus_type\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"dispatch_time\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"enroute_scene_time\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"arrival_time\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"canceled_enroute\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"number_of_people\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"action_taken_code\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"action_taken\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"first_arriving_unit\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}},{\"name\":\"responded_from_quarters\",\"type\":\"string\",\"nullable\":true,\"metadata\":{}}]}","partitionColumns":[]}}
+#########################
+
