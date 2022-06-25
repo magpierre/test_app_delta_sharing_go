@@ -135,9 +135,11 @@ func main() {
 					}
 					fmt.Println("Stored statistics:")
 					for _, v := range r.AddFiles {
+						fmt.Println("File:", v.Url)
 						s, err := v.GetStats()
 						if err == nil {
 							fmt.Println("Number of records", s.NumRecords)
+							fmt.Println("Statistics: (field, Min, Max, #Nulls)")
 							for k, value := range s.MinValues {
 								fmt.Println(k, "|", value, "|", s.MaxValues[k], "|", s.NullCount[k])
 							}
