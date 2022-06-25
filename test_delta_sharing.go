@@ -27,6 +27,7 @@ func main() {
 		tr := array.NewTableReader(at, 100)
 		tr.Retain()
 		fmt.Println("")
+		fmt.Println("Number of rows:", at.NumRows())
 		fmt.Println("Data:")
 		var tbl [][]interface{}
 		h := []string{}
@@ -99,6 +100,7 @@ func main() {
 	if *prof != "" {
 		fmt.Println("List tables...")
 		y, err := delta_sharing.NewSharingClient(context.Background(), *prof)
+
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -118,7 +120,7 @@ func main() {
 				}
 				for i, v := range tables {
 					fmt.Printf("Pos %d,table path %s.%s.%s\n", i, v.Share, v.Schema, v.Name)
-					r, err := y.RestClient.ListFilesInTable(v)
+					r, err := y.ListFilesInTable(v)
 					if err != nil {
 						log.Fatal(err)
 					}
