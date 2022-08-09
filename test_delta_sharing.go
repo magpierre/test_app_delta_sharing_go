@@ -19,17 +19,20 @@ func main() {
 	flag.Parse()
 	if profile_path != nil && *profile_path != "" {
 		x, _ := delta_sharing.LoadAsArrowTable(*profile_path, 0)
+		//y, _ := delta_sharing.LoadAsDataFrame(*profile_path)
+		//	fmt.Println(y)
 		if x == nil {
 			log.Fatal("No arrow table")
 		}
 		at := x.(array.Table)
+
 		fmt.Println("Arrow", at.Schema())
 		tr := array.NewTableReader(at, 100)
 		tr.Retain()
 		fmt.Println("")
 		fmt.Println("Number of rows:", at.NumRows())
 		fmt.Println("Data:")
-		var tbl [][]interface{}
+		var tbl [][]string
 		h := []string{}
 		for i := 0; i < int(at.NumCols()); i++ {
 			h = append(h, at.Column(i).Name())
@@ -38,7 +41,7 @@ func main() {
 		for tr.Next() {
 			rec := tr.Record()
 			for pos := 0; pos < int(rec.NumRows()); pos++ {
-				var d []interface{}
+				var d []string
 				for _, col := range rec.Columns() {
 					switch col.DataType().ID() {
 					case arrow.STRING:
@@ -46,40 +49,40 @@ func main() {
 						d = append(d, a.Value(pos))
 					case arrow.INT16:
 						i16 := col.(*array.Int16)
-						d = append(d, int(i16.Value(pos)))
+						d = append(d, fmt.Sprintf("%d", i16.Value(pos)))
 					case arrow.INT32:
 						i32 := col.(*array.Int32)
-						d = append(d, int(i32.Value(pos)))
+						d = append(d, fmt.Sprintf("%d", i32.Value(pos)))
 					case arrow.INT64:
 						i64 := col.(*array.Int64)
-						d = append(d, int(i64.Value(pos)))
+						d = append(d, fmt.Sprintf("%d", i64.Value(pos)))
 					case arrow.FLOAT16:
 						f16 := col.(*array.Float16)
-						d = append(d, f16.Value(pos))
+						d = append(d, fmt.Sprintf("%f", f16.Value(pos)))
 					case arrow.FLOAT32:
 						f32 := col.(*array.Float32)
-						d = append(d, f32.Value(pos))
+						d = append(d, fmt.Sprintf("%f", f32.Value(pos)))
 					case arrow.FLOAT64:
 						f64 := col.(*array.Float64)
-						d = append(d, f64.Value(pos))
+						d = append(d, fmt.Sprintf("%f", f64.Value(pos)))
 					case arrow.BOOL:
 						b := col.(*array.Boolean)
-						d = append(d, b.Value(pos))
+						d = append(d, fmt.Sprintf("%t", b.Value(pos)))
 					case arrow.BINARY:
 						bi := col.(*array.Binary)
-						d = append(d, bi.Value(pos))
+						d = append(d, fmt.Sprintf("%v", bi.Value(pos)))
 					case arrow.DATE32:
 						d32 := col.(*array.Date32)
-						d = append(d, d32.Value(pos))
+						d = append(d, string(d32.Value(pos)))
 					case arrow.DATE64:
 						d64 := col.(*array.Date64)
-						d = append(d, d64.Value(pos))
+						d = append(d, string(d64.Value(pos)))
 					case arrow.DECIMAL128:
 						dec := col.(*array.Decimal128)
-						d = append(d, dec.Value(pos))
+						d = append(d, fmt.Sprintf("%f", dec.Value(pos)))
 					case arrow.INTERVAL_DAY_TIME:
 						idt := col.(*array.DayTimeInterval)
-						d = append(d, idt.Value(pos))
+						d = append(d, fmt.Sprintf("%v", idt.Value(pos)))
 					}
 				}
 				tbl = append(tbl, d)
